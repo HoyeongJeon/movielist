@@ -36,9 +36,7 @@ const paintSearchMovieList = (title, overview, id, poster_path) => {
   <td>
   <div class="img">
   <img src=${
-    poster_path
-      ? IMG_URL + poster_path
-      : "https://static.thenounproject.com/png/4209393-200.png"
+    poster_path ? IMG_URL + poster_path : "./assets/imgs/noimage.jpeg"
   } alt="img" />
 </div>
 </td>

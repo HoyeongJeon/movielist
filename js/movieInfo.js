@@ -53,7 +53,7 @@ const init = async () => {
     let img = new Image();
     img.src = poster_path
       ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-      : "https://static.thenounproject.com/png/4209393-200.png";
+      : "./assets/imgs/noimage.jpeg";
     img.width = "280";
     img.height = "342";
     img.alt = "Sorry, NO IMAGE";

@@ -11,6 +11,8 @@ const options = {
   },
 };
 
+let totalArr = [];
+
 const getMoiveListFromDB = async () => {
   try {
     const res = await fetch(
