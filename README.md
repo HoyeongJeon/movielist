@@ -13,3 +13,6 @@ TMDB, Vanilla JS, html , css를 활용한 데이터 받아오기 연습
   search.html
   /styles
   /js
+
+## 링크
+https://hoyeongjeon.github.io/movielist/index.html
