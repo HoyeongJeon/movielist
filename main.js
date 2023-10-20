@@ -21,7 +21,7 @@ const getMoiveListFromDB = async () => {
     );
     const json = await res.json();
     const { results } = json;
-    return results;
+    totalArr = results;
   } catch (error) {
     console.error(error);
   }
@@ -53,8 +53,7 @@ const handleSearchClick = async (event) => {
   movieList.innerHTML = "";
   let inputVal = searchInput.value;
   try {
-    const results = await getMoiveListFromDB();
-    const searched = results.filter((element) => {
+    const searched = totalArr.filter((element) => {
       return element.title.toLowerCase().includes(inputVal.toLowerCase());
     });
     paintPage(searched);
@@ -65,8 +64,8 @@ const handleSearchClick = async (event) => {
 
 const init = async () => {
   try {
-    const results = await getMoiveListFromDB();
-    paintPage(results);
+    await getMoiveListFromDB();
+    paintPage(totalArr);
   } catch (error) {
     console.error(error);
   }
