@@ -12,6 +12,7 @@ const pageBtns = document.querySelectorAll(".pageBtn");
 let totalPageNum = 0;
 let pureURL;
 let keyword;
+const shownPageNum = 3; // 페이지네이션 보이는 개수 3개
 
 // 페이지네이션 페이지 번호 클릭 시 , 페이지 번호에 따른 영화 리스트 받아오기
 const getMovieListByPage = (e) => {
@@ -35,8 +36,10 @@ const paintSearchMovieList = (title, overview, id, poster_path) => {
   <td>
   <div class="img">
   <img src=${
-    poster_path ? IMG_URL + poster_path : "../styles/imgs/noimage.jpeg"
-  } alt="img" draggable="false" />
+    poster_path
+      ? IMG_URL + poster_path
+      : "https://static.thenounproject.com/png/4209393-200.png"
+  } alt="img" />
 </div>
 </td>
   <td colspan="2">${overview}</td>`;
@@ -50,6 +53,8 @@ const paintPagination = (number, direction) => {
       return;
     } else {
       pageLink.dataset.id = Number(pageLink.dataset.id) + pageNumbers;
+      console.log(pageLink);
+
       pageLink.innerHTML = Number(pageLink.innerHTML) + pageNumbers;
     }
   } else if (direction === "Previous") {
@@ -65,7 +70,6 @@ const paintPagination = (number, direction) => {
 
 const pageNumber = document.getElementsByClassName("pageNumber");
 for (const number of pageNumber) {
-  console.log(number);
   number.addEventListener("click", getMovieListByPage);
 }
 const handlePageBtnClick = (e) => {
@@ -90,9 +94,17 @@ const getMoiveListByKeywordAndPage = async (keyword, page = 1) => {
     options
   );
   const jsonData = await searchList.json();
-  const { total_pages } = jsonData;
+  let { total_pages } = jsonData;
+  if (total_pages % shownPageNum) {
+    total_pages += shownPageNum - (total_pages % shownPageNum);
+  }
   totalPageNum = total_pages;
   const { results } = jsonData;
+  console.log(results);
+  if (results.length === 0) {
+    alert("Sorry no info");
+    return;
+  }
   results.forEach((result) => {
     const { title, overview, id, poster_path } = result;
     paintSearchMovieList(title, overview, id, poster_path);

@@ -39,9 +39,13 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <a class="btn btn-outline-success searchBtn" href="./movielist.html?"
-            >Search</a
+          <button
+            type="submit"
+            class="btn btn-outline-success searchBtn"
+            href="./movielist.html?"
           >
+            Search
+          </button>
         </form>
       </div>
     </nav>
@@ -49,12 +53,12 @@
     <section class="main-1">
       <div class="p-5 mb-4 bg-body-tertiary rounded-3 background"></div>
       <h2 class="text-center">
-        Check out today's trending
+        <a href="#main-2">Check out today's trending</a>
         <br />
         <span class="text-center">👇</span>
       </h2>
     </section>
-    <section class="main-2">
+    <section class="main-2" id="main-2">
       <div class="wrapper">
         <i id="left" class="fa-solid fa-angle-left"></i>
         <ul class="carousel"></ul>

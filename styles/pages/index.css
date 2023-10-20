@@ -25,6 +25,15 @@ section {
   margin-top: 80px;
 }
 
+.text-center a:link {
+  text-decoration: none;
+}
+
+.text-center a:visited,
+a:active {
+  color: inherit;
+}
+
 /* Carousel */
 
 .wrapper {

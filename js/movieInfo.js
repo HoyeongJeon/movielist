@@ -49,10 +49,11 @@ const init = async () => {
   let vidsArr = await getYoutubeUrl(movieId);
 
   if (vidsArr.length === 0) {
-    let img = document.createElement("img");
+    // let img = document.createElement("img");
+    let img = new Image();
     img.src = poster_path
       ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-      : "../styles/imgs/noimage.jpeg";
+      : "https://static.thenounproject.com/png/4209393-200.png";
     img.width = "280";
     img.height = "342";
     img.alt = "Sorry, NO IMAGE";

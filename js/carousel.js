@@ -49,6 +49,3 @@ const infiniteScroll = () => {
 
 carousel.addEventListener("mousedown", startDrag);
 carousel.addEventListener("scroll", infiniteScroll);
-
-console.log(carousel.scrollLeft);
-console.log(carousel.offsetWidth);
