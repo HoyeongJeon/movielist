@@ -1,0 +1,10 @@
+GET /3/discover/movie
+GET /3/discover/movie
+GET /3/movie/top_rated
+GET /3/movie/575264/credits
+GET /3/collection/collection_id/images
+GET /3/genre/tv/list
+GET /3/genre/movie/list
+GET /3/genre/movie/list
+GET /3/movie/926393/credits
+GET /3/movie/now_playing
