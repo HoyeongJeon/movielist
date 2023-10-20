@@ -52,7 +52,7 @@ const init = async () => {
     let img = document.createElement("img");
     img.src = poster_path
       ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-      : "../imgs/noimage.jpeg";
+      : "../styles/imgs/noimage.jpeg";
     img.width = "280";
     img.height = "342";
     img.alt = "Sorry, NO IMAGE";

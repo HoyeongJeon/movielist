@@ -35,7 +35,7 @@ const paintSearchMovieList = (title, overview, id, poster_path) => {
   <td>
   <div class="img">
   <img src=${
-    poster_path ? IMG_URL + poster_path : "../imgs/noimage.jpeg"
+    poster_path ? IMG_URL + poster_path : "../styles/imgs/noimage.jpeg"
   } alt="img" draggable="false" />
 </div>
 </td>
