@@ -13,10 +13,10 @@ const options = {
 
 let totalArr = [];
 
-const getMoiveListFromDB = async () => {
+const getMovieListFromDB = async () => {
   try {
     const res = await fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?language=ko-KO&page=1",
+      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
       options
     );
     const json = await res.json();
@@ -64,7 +64,7 @@ const handleSearchClick = async (event) => {
 
 const init = async () => {
   try {
-    await getMoiveListFromDB();
+    await getMovieListFromDB();
     paintPage(totalArr);
   } catch (error) {
     console.error(error);
